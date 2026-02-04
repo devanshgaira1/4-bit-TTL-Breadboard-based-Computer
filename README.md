@@ -5,6 +5,8 @@
 # 4-bit TTL Breadboard-based Computer
 
 A fully discrete 4-bit TTL Computer built on breadboards using 74-series logic with Arduino for RAM/ROM emulation
+![Complete CPU Setup](4bit2.jpeg)
+*Figure: The complete 7-breadboard CPU system*
 
 ---
 
@@ -597,6 +599,11 @@ void loop() {
   delay(10);  // Short delay between instructions
 }
 ```
+![Complete CPU Setup](4bit3.jpeg)
+*Figure: When it worked for the 1st time*
+![Complete CPU Setup](4bit4.jpeg)
+*Figure: Side View*
+
 
 ---
 
@@ -617,9 +624,17 @@ The Arduino effectively turns into ROM: on each address the CPU places on the bu
 **Problem:** TTL inputs should never be left floating.
 **Solution:** Always use pull-up or pull-down resistors on unused inputs or switch inputs to avoid unpredictable behavior.
 
+
+![Complete CPU Setup](p2.jpeg)
+*Figure: Floating wires tend to pick up signals from mere human touch leading to changes in OPCODE*
+
 ### 2. Power and Ground Wiring
 **Problem:** Forgetting to connect the ground rails or miswiring +5V can prevent the CPU from working.
 **Solution:** Double-check that every IC has its power pins properly tied.
+
+
+![Complete CPU Setup](p1.jpeg)
+*Figure: Incorrect placement of wires tends to cause probelems in the Bus System*
 
 ### 3. Clock Signal Issues
 **Problem:** If the clock isn't stable (e.g. no Schmitt trigger or debouncing), the CPU may behave erratically.
